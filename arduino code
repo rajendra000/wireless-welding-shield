@@ -17,11 +17,11 @@ void loop() {
   if(Serial.available()>=0)
   {
     c=Serial.readString();
-    if((c="so")||(c="shield open"))
+    if((c="so")||(c="Shield open"))
     {
       myservo.write(90);//servo will rotate to 90 degrees
     }
-    else if((c="soo")||(c="shield close"))
+    else if((c="soo")||(c="Shield close"))
     {
       myservo.write(0);//servo  will rotate to 0 degrees 
     }
