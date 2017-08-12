@@ -1,0 +1,30 @@
+/*Taduvai Rajendra 
+dontbeliveme000@gmail.com
+wireless control welding shield  by mobile phone
+coding for the controlling welding shield
+connect the shield of servo motor 
+*/
+#include<Servo.h>//headder file for the servo motor
+Servo myservo;//myservo is for giving command to servo
+void setup() {
+ myservo.attach(5);//attach is used for the intialize the servo motor
+  Serial.begin(9600);
+  
+}
+String c;
+
+void loop() {
+  if(Serial.available()>=0)
+  {
+    c=Serial.readString();
+    if((c="so")||(c="shield open"))
+    {
+      myservo.write(90);//servo will rotate to 90 degrees
+    }
+    else if((c="soo")||(c="shield close"))
+    {
+      myservo.write(0);//servo  will rotate to 0 degrees 
+    }
+  }
+  
+ }
